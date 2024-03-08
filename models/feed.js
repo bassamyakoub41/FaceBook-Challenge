@@ -16,7 +16,7 @@ const FeedSchema = new mongoose.Schema({
         type : Date,
         default : Date.now,
         get: function (createdAt) {
-            return moment(createdAt).format("MMM Do YY");
+            return moment(createdAt).format("llll");
         }
     },
 });

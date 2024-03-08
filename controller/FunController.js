@@ -1,7 +1,7 @@
 const Feed = require ('../models/feed');
 
 const getHomePage = (req, res) => {
-    Feed.find().sort({ createdAt: -1 })
+    Feed.find().sort({ Created_at: -1 })
         .then((result) => res.render('Home', { feeds: result, err: false }))
         .catch(err => console.log(err));
 }
