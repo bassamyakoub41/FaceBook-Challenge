@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+    <link href="../public/Edit.css" rel="stylesheet"/>
+    <script defer src="../public/js.js"></script>
+</head>
+<body>
+    <header><h1>Welcome To FaceBook</h1></header>
+    <form action="/edit-feed/<%= post._id %>" method="post">
+        <input type="text" name="name" value="<%=post.name%>">
+        <textarea name="message"><%= post.message %></textarea>
+        <button type="submit">Submit</button>
+    </form>
+    <footer>CopyRight &copy; 2024 Bassam Yakoub</footer>
+</body>
+</html>

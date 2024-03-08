@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../public/Home.css" rel="stylesheet"/>
+    <script defer src="../public/js.js"></script>
+    <title>FaceBook</title>
+</head>
+<body>
+    <header><h1>Welcome To Facebook</h1></header>
+    <div class="addPost">
+        <h3>Add Post</h3>
+        <form action="/post-feed" method="post">
+            <input type="text" name="name" placeholder="Name"><br>
+            <% if (err && err.name) { %>
+                <p class="error"><%= err.name.message %></p>
+                <% } %>
+            <textarea name="message" placeholder="Message"></textarea>
+            <% if (err && err.message) { %>
+                <p class="error"><%= err.message.message %></p>
+            <% } %>
+            <button type="submit">Post</button>
+        </form>
+    </div>
+    <div class="feeds">
+        <% for (i=0 ; i < feeds.length ; i ++) { %> 
+            <h1><%= feeds[i].name%></h1>
+            <p><%=feeds[i].message.slice(0,10)%></p>
+            <p><%=feeds[i].Created_at%></p>
+            <a href="/FullFeed/<%=feeds[i]._id%>">See More</a>
+            <% } %>
+    </div>
+    
+</body>
+
+<footer>CopyRight &copy; 2024 Bassam Yakoub</footer>
+</html>

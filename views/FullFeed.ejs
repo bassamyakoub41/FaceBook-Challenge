@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Feed</title>
+    <link href="../public/FullFeed.css" rel="stylesheet"/>
+    <script defer src="../public/js.js"></script>
+</head>
+<body>
+    <header><h1>Welcome To FaceBook</h1></header>
+    <a href="/Home">Home</a>
+    <div class="content">
+        <h2><%= post.name %></h2>
+        <p><%= post.message %></p>
+        <p><%= post.Created_at %></p>
+    </div>
+    <div class="up-del-btns">
+    <form action="/delete-feed/<%=post._id%>"  method="post">
+        <button class="delbtn">Delete</button>
+    </form>
+    <form action="/EditFeed/<%=post._id%>"  method="get">
+        <button class="upbtn">Edit Post</button>
+    </form>
+    </div>
+    <footer>CopyRight &copy; 2024 Bassam Yakoub</footer>
+</body>
+</html>
